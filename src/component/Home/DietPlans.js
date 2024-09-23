@@ -7,29 +7,18 @@ import { Fade } from "react-awesome-reveal";
 function DietPlans() {
   return (
     <div className="container-md">
-          <a
-          href="/"
-          className="ml-2 headline"
-          style={{
-            margin: "10px 0 1vw 0",
-            display: "flex",
-            justifyContent: "center",
-            textDecoration: "none",
-            color: "black",
-          }}
-        >
+        
       <p
-        className="healthtips headline arrow"
+        className=" headline fn-4 text-center"
         style={{
           fontWeight: "700",
-          fontFamily: '"Playfair Display", "serif"',
           
         }}
       >
         {" "}
-        Diet Plans <i class="fa-solid fa-arrow-right fa-sm " style={{color: "#000000"}}></i>
+      <span>  Diet Plans </span>
       </p>
-      </a>
+      <hr className="mt-0 mb-5"/>
       <div className="row">
         <div className="col-12 col-sm-4">
           <Fade direction="right">

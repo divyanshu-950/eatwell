@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-function HealthNews(props) {
+import Spinner from "./Spinner";
+import { Fade } from "react-awesome-reveal";
+function News(props) {
   const [articles, setarticles] = useState();
+  const[loading,setloading] =useState(false);
   const getData = async () => {
+    setloading(true)
     let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
     let data = await fetch(url);
     let parseddata = await data.json();
-    setarticles(parseddata.articles.slice(0, 6));
+    setarticles(parseddata.articles);
+    setloading(false);
   };
 
   useEffect(() => {
@@ -16,27 +20,40 @@ function HealthNews(props) {
   return (
     <div>
       <div className="container-md">
-       
-           <p
-            className=" headline text-center"
+        <a
+          href="/news"
+          className="ml-2 headline mt-5"
+          style={{
+            margin: "10px 0 1vw 0",
+            display: "flex",
+            justifyContent: "center",
+            textDecoration: "none",
+            color: "black",
+          }}
+        >
+          <p
+            className="healthtips headline arrow"
             style={{
               fontWeight: "700",
                fontFamily: '"Playfair Display", "serif"',
             }}
           >
             {" "}
-          <span>  NEWS </span>
-         
-          </p>     
-          <hr className="mb-5" />
+            NEWS
+          </p>
+        
+        </a>
+      <hr />
         <div className="row">
           {articles &&
             articles.map((e) => {
               return (
-                <div className={`col-${props.cardbreak} col-md-${props.cardspilit}`}  key={e.url}>
-                  <Link className='alink' to={e.url} target="_blank" rel="noreferrer">
+                  <>
+                <div className="col-6 col-md-4 col-sm-4 my-2"  key={e.url}>
+                <Fade triggerOnce direction="right">
+                  <a className='alink' href={e.url} target="_blank" rel="noreferrer">
                   <div
-                    className="card mb-3"
+                    className="card mb-3 mx-2 my-2"
                     style={{ backgroundColor: "inherit", border: "none" }}
                   >
                     <div className="row g-0">
@@ -75,16 +92,19 @@ function HealthNews(props) {
                       </div>
                     </div>
                   </div>
-                  </Link>
-                  <hr />
+                  </a>
+                </Fade>
                 </div>
+               { loading && <Spinner/>}
+                </>
               );
-            })}
+            })
+            }
+            
         </div>
-       <div className="d-flex justify-content-center my-4"> <button className="btn  btn-outline-secondary fn-2"> <strong>View More</strong></button></div>
       </div>
     </div>
   );
 }
 
-export default HealthNews;
+export default News;

@@ -10,6 +10,7 @@ import{
   Routes,
   Route
 } from "react-router-dom"
+import News from './component/News';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route exact path='/breakfastbrunch' element={<QuickEasy key={"breakfastbrunch"} url={'breakfastbrunch'} title={"Breakfast & Brunches"}  />}/>
       <Route exact path='/collection' element={<Collection/>}/>
       <Route exact path='/blog' element={<Blog/>}/>
+      <Route exact path='/news' element={<News/>}/>
     </Routes>
     <Footer/>
    </Router>

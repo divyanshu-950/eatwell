@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import cook from "../img/cooking.png";
 import { Fade } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
+
 function MostLiked() {
   const [recipes, setRecipes] = useState();
+  const navigate = useNavigate();
   const getData = async () => {
     let url = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/quickeasy.json`;
     let data = await fetch(url);
@@ -13,27 +16,31 @@ function MostLiked() {
   useEffect(() => {
     getData();
   }, []);
+  const handleclick=(recipe)=>{
+    
+    navigate('/blog',{state:recipe});
+   } 
   return (
-    <div className="container-md">
+    <div className="container-md  ">
       <p
-        className="ml-2 heading"
+        className="ml-2 fn-4 text-center heading"
         style={{
           margin: "0 0 0 0",
-          fontWeight: "500",
-          fontFamily: "'Playpen Sans', 'cursive'",
+          fontWeight: "700",
         
         }}
       >
-        TOP VIEWED RECIPES
+        What's Popular
       </p>
-      <div id="horizontal" className="mb-2" style={{ height: "4px" }}></div>
+      <hr className="mb-4 mt-1"/>
+     
       <div className="row">
         {recipes &&
           recipes.map((e,i) => {
             return (
-              <div className="col-6 col-md-4" key={e.image}>
+              <div className="col-6 col-sm-4 col-md-3" key={e.image}>
                 <Fade delay={i*250} triggerOnce direction="right">
-                <a href="/" rel="nonreferrer" target="_blank" style={{textDecoration:'none',color:"inherit"}}>
+                
                 <div className="card mb-3">
                   <img src={e.image} className="card-img-top" alt=".img" />
                   <div className="card-body">
@@ -75,9 +82,10 @@ function MostLiked() {
                       <span className={`fa fa-star  ${e.rate>4?(e.rate<4.6?'fa-star-half-o checked':'checked'):''}`}style={ e.rate<=4?{color:'lightgrey'}:{}}></span>
                       <small> <strong> {e.rate}/5</strong></small>
                     </p>
+                    <button className="btn btn-sm my-4" style={{backgroundColor:'darkslategrey',color:'white'}} onClick={()=>{handleclick(e)}}> View Recipe</button>
                   </div>
                 </div>
-                </a>
+                
                 </Fade>
               </div>
             );
