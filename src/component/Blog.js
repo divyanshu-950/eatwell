@@ -2,12 +2,13 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import cook from "./img/cooking.png";
 import HealthNews from "./Home/HealthNews";
-function Blog() {
+function Blog(props) {
   let location = useLocation();
   let data = location.state;
-  console.log(data)
+ 
   return (
     <div className=" row mt-5">
+      { props.setProgress(20)}
       <div className="container" style={{ padding: "10px 10vw" }}>
         <div className="col-12 col-md-8">
           <p className="text-center my-4 mb-5">
@@ -86,16 +87,17 @@ function Blog() {
                         ></i>{data.time["total time"]}
                 </span>
               </p>
-              <span className=" fn-5 mx-2 fs-5">Serving: <i class="fa-solid fa-bowl-food" style={{ color: "#7d9211" }}></i> {data.serving}</span>
+              <span className=" fn-5 mx-2 fs-5">Serving: <i className="fa-solid fa-bowl-food" style={{ color: "#7d9211" }}></i> {data.serving}</span>
             </strong>
           </div>
           <p className="mx-2 fs-3 fn-4 fw-bolder mb-1 mt-4">Ingredients </p>
           <hr className="mt-0" />
+          { props.setProgress(40)}
           {Object.values(data.ingredients).map((element, index) => {
             return (
               <p className=" fn-5 mx-1" style={{ fontSize: "1.2em" }}>
                 <i
-                  class="fa-solid fa-chevron-right"
+                  className="fa-solid fa-chevron-right"
                   style={{ color: "#3caf59" }}
                 ></i>{" "}
                 {element}{" "}
@@ -109,7 +111,7 @@ function Blog() {
               <p className=" fn-5 mx-1 fs-5"><strong>STEP: {index+1}</strong></p>
               <p className=" fn-5 mx-2" style={{ fontSize: "1.2em", textAlign:'justify'}}>
                 <i
-                  class="fa-solid fa-chevron-right"
+                  className="fa-solid fa-chevron-right"
                   style={{ color: "#3caf59" }}
                 ></i>{" "}
                 {element}{" "}
@@ -121,8 +123,10 @@ function Blog() {
         <div className="col-12 col-md-4"></div>
         <hr />
         <hr />
+        { props.setProgress(80)}
         <HealthNews cardbreak={6} cardspilit={6}/>
       </div>
+      { props.setProgress(100)}
     </div>
   );
 }

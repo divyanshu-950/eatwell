@@ -8,10 +8,14 @@ function QuickEasy(props) {
   const [recipes, setRecipes] = useState();
   const navigate = useNavigate();
   const getData = async () => {
+    props.setProgress(10)
     let url =`https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/${props.url}.json`
+     props.setProgress(40)
     let data = await fetch(url);
     let parseddata = await data.json();
+    props.setProgress(60)
     setRecipes(parseddata.recipes);
+    props.setProgress(100)
   };
 
   useEffect(() => {
@@ -44,7 +48,7 @@ function QuickEasy(props) {
           recipes.map((e,i) => {
             return (
               <div className="col-12 col-md-3 col-sm-4" key={e.image}>
-                <Fade delay={i*250} triggerOnce direction="right">
+                <Fade delay={i*100} triggerOnce direction="right">
                 <div className="card mb-3" style={{border:'none'}}>
                   <img src={e.image} className="card-img-top" alt=".img" style={{aspectRatio:'5/4'}} />
                   <div className="card-body">

@@ -5,12 +5,17 @@ function News(props) {
   const [articles, setarticles] = useState();
   const[loading,setloading] =useState(false);
   const getData = async () => {
+    props.setProgress(20)
     setloading(true)
     let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
+    props.setProgress(40)
     let data = await fetch(url);
     let parseddata = await data.json();
+    props.setProgress(60)
     setarticles(parseddata.articles);
+    props.setProgress(80)
     setloading(false);
+    props.setProgress(100)
   };
 
   useEffect(() => {
@@ -46,11 +51,11 @@ function News(props) {
       <hr />
         <div className="row">
           {articles &&
-            articles.map((e) => {
+            articles.map((e,i) => {
               return (
                   <>
                 <div className="col-6 col-md-4 col-sm-4 my-2"  key={e.url}>
-                <Fade triggerOnce direction="right">
+                <Fade delay={i*100} triggerOnce direction="right">
                   <a className='alink' href={e.url} target="_blank" rel="noreferrer">
                   <div
                     className="card mb-3 mx-2 my-2"

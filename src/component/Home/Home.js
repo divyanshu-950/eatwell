@@ -13,8 +13,6 @@ import { Fade } from "react-awesome-reveal";
 function Home() {
   return (
     <>
-
-
         <div className='container-md'>
       <div
         className="d-flex justify-content-between"
