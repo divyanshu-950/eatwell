@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/eatwell/static/css/main.8e8cf3ff.css",
-    "main.js": "/eatwell/static/js/main.46c6a09d.js",
+    "main.js": "/eatwell/static/js/main.6e752bc6.js",
     "static/js/453.592dc99b.chunk.js": "/eatwell/static/js/453.592dc99b.chunk.js",
+    "static/media/me.png": "/eatwell/static/media/me.24b7cffb54882575e99a.png",
     "static/media/img1.jpg": "/eatwell/static/media/img1.050033ad9898c1822ac1.jpg",
     "static/media/hl2.jpg": "/eatwell/static/media/hl2.c84c89067e9162b3d580.jpg",
     "static/media/best10.jpg": "/eatwell/static/media/best10.3068f90ccf08130d16da.jpg",
     "static/media/sd1.jpg": "/eatwell/static/media/sd1.8d9146e047019644afaf.jpg",
+    "static/media/aboutme.jpg": "/eatwell/static/media/aboutme.204968f462ef25607362.jpg",
     "static/media/sd2.jpg": "/eatwell/static/media/sd2.fed8f53515c24a6a3688.jpg",
     "static/media/img10.jpg": "/eatwell/static/media/img10.04614b7f7422c99719e5.jpg",
     "static/media/homelogo.svg": "/eatwell/static/media/homelogo.05fb051d1147d85ef4080d4ee7bd631a.svg",
@@ -15,13 +17,14 @@
     "static/media/img8.jpg": "/eatwell/static/media/img8.4ec4818eca1c176b5696.jpg",
     "static/media/img4.jpg": "/eatwell/static/media/img4.3c787587532284743337.jpg",
     "static/media/loading.gif": "/eatwell/static/media/loading.09e661f951940730c9b5.gif",
+    "static/media/about2.png": "/eatwell/static/media/about2.27fb17b5dcd0b5746cbb.png",
     "index.html": "/eatwell/index.html",
     "main.8e8cf3ff.css.map": "/eatwell/static/css/main.8e8cf3ff.css.map",
-    "main.46c6a09d.js.map": "/eatwell/static/js/main.46c6a09d.js.map",
+    "main.6e752bc6.js.map": "/eatwell/static/js/main.6e752bc6.js.map",
     "453.592dc99b.chunk.js.map": "/eatwell/static/js/453.592dc99b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8e8cf3ff.css",
-    "static/js/main.46c6a09d.js"
+    "static/js/main.6e752bc6.js"
   ]
 }
