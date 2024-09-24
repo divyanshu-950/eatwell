@@ -1,10 +1,10 @@
 import React from 'react'
-
+import logo from'../img/homelogo.svg'
 function Footer() {
   return (
-    <div>
+
       
-<div className=" my-1 mt-5">
+<div className=" mt-5">
 
 
   <footer
@@ -28,10 +28,10 @@ function Footer() {
         <a href="/" className="text-white me-4 alink">
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="/" className="text-white me-4 alink">
+        <a href="https://www.linkedin.com/in/divyanshuk006/" className="text-white me-4 alink">
           <i className="fab fa-linkedin"></i>
         </a>
-        <a href="/" className="text-white me-4 alink">
+        <a href="https://github.com/divyanshu-950" className="text-white me-4 alink">
           <i className="fab fa-github"></i>
         </a>
       </div>
@@ -41,20 +41,22 @@ function Footer() {
 
 
     <section className="">
-      <div className="container text-center text-md-start mt-5">
+      <div className="container text-center text-md-start mt-3">
 
         <div className="row mt-3">
 
-          <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <div className="col-md-3 col-lg-4 col-xl-3 mx-auto my-5">
 
-            <h6 className="text-uppercase fw-bold">EatWell</h6>
-            <hr
-                className="mb-4 mt-0 d-inline-block mx-auto"
-                style={{width: '60px', backgroundColor:' #7c4dff', height: '2px'}}
-                />
-            <p style={{textAlign:'justify'}}>
-            We believe that a healthy lifestyle starts in the kitchen. Whether you're a seasoned chef or just starting your culinary journey, 
-      our collection of wholesome recipes and expert health tips will inspire you to make nourishing choices every day.
+            
+            <p className='fn-4' style={{textAlign:'center'}}>
+           <h2>Eat
+           <img style={{marginTop:'10px'}}
+              src={logo}
+              alt="Logo"
+              width="60"
+              height="26"
+              className="d-inline-block align-text-top "
+            />Well</h2>
             </p>
           </div>
 
@@ -138,7 +140,7 @@ function Footer() {
 
 </div>
 
-    </div>
+   
   )
 }
 

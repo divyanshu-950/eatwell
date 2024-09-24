@@ -1,6 +1,7 @@
 import React, {useState } from "react";
 import logo from './img/homelogo.svg'
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 export default function Navbar() {
  
   const[background,setBackground] = useState(false)
@@ -15,7 +16,6 @@ export default function Navbar() {
   window.addEventListener('scroll',changeBackground)
   return (
     <div>
-      
       <nav
         className={`navbar ${background?'bactive':''} navbar-expand-lg fixed-top`}
        
@@ -45,6 +45,7 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item dropdown">
@@ -125,7 +126,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link className="nav-link" aria-current="page" to="/about">
                   <span className="healthtips">About us</span>
                 </Link>
               </li>
@@ -145,6 +146,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      
     </div>
   );
 }

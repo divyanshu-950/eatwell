@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "./Spinner";
 import { Fade } from "react-awesome-reveal";
+
 function News(props) {
+  const [page,setpage] = useState(12);
+  const[length,setlength] =useState(0)
   const [articles, setarticles] = useState();
   const[loading,setloading] =useState(false);
   const getData = async () => {
@@ -12,7 +15,9 @@ function News(props) {
     let data = await fetch(url);
     let parseddata = await data.json();
     props.setProgress(60)
-    setarticles(parseddata.articles);
+    setlength(parseddata.articles.length)
+    setarticles(parseddata.articles.slice(0,page));
+
     props.setProgress(80)
     setloading(false);
     props.setProgress(100)
@@ -21,7 +26,15 @@ function News(props) {
   useEffect(() => {
     getData();
   }, []);
-
+const handleclick=async()=>{
+  setloading(true)
+  let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
+  let data = await fetch(url);
+  let parseddata = await data.json();
+  setarticles(articles.concat(parseddata.articles.slice(page,(page+12))));
+  setpage(page+12);
+  setloading(false);
+}
   return (
     <div>
       <div className="container-md">
@@ -37,7 +50,7 @@ function News(props) {
           }}
         >
           <p
-            className="healthtips headline arrow"
+            className="headline "
             style={{
               fontWeight: "700",
                fontFamily: '"Playfair Display", "serif"',
@@ -49,13 +62,16 @@ function News(props) {
         
         </a>
       <hr />
+
         <div className="row">
-          {articles &&
+       
+          {articles && 
             articles.map((e,i) => {
               return (
                   <>
+                 
                 <div className="col-6 col-md-4 col-sm-4 my-2"  key={e.url}>
-                <Fade delay={i*100} triggerOnce direction="right">
+                <Fade delay={(i%12)*60} triggerOnce direction="right">
                   <a className='alink' href={e.url} target="_blank" rel="noreferrer">
                   <div
                     className="card mb-3 mx-2 my-2"
@@ -100,11 +116,12 @@ function News(props) {
                   </a>
                 </Fade>
                 </div>
-               { loading && <Spinner/>}
                 </>
               );
             })
-            }
+          }
+          {loading&&<Spinner/>}
+           <div className="d-flex justify-content-center my-4"> <button  style={page > length?{display:'none'}:{}}className="btn  btn-primary fn-2" onClick={handleclick}> <strong>Load More <i class="fa-solid fa-arrow-right "></i></strong></button></div>
             
         </div>
       </div>

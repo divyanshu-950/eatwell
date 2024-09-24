@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function HealthNews(props) {
+  const navigate = useNavigate();
   const [articles, setarticles] = useState();
   const getData = async () => {
     let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
@@ -8,10 +9,12 @@ function HealthNews(props) {
     let parseddata = await data.json();
     setarticles(parseddata.articles.slice(0, 6));
   };
-
   useEffect(() => {
     getData();
   }, []);
+  const handleclick =()=>{
+    navigate('/news')
+  }
 
   return (
     <div>
@@ -31,9 +34,9 @@ function HealthNews(props) {
           <hr className="mb-5" />
         <div className="row">
           {articles &&
-            articles.map((e) => {
+            articles.map((e,i) => {
               return (
-                <div className={`col-${props.cardbreak} col-md-${props.cardspilit}`}  key={e.url}>
+                <div className={`col-${props.cardbreak} col-md-${props.cardspilit}`}  key={i}>
                   <Link className='alink' to={e.url} target="_blank" rel="noreferrer">
                   <div
                     className="card mb-3"
@@ -81,7 +84,7 @@ function HealthNews(props) {
               );
             })}
         </div>
-       <div className="d-flex justify-content-center my-4"> <button className="btn  btn-outline-secondary fn-2"> <strong>View More</strong></button></div>
+       <div className="d-flex justify-content-center my-4"> <button className="btn  btn-outline-secondary fn-2" onClick={handleclick}> <strong>View More</strong></button></div>
       </div>
     </div>
   );

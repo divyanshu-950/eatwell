@@ -47,7 +47,7 @@ function QuickEasy(props) {
         {recipes &&
           recipes.map((e,i) => {
             return (
-              <div className="col-12 col-md-3 col-sm-4" key={e.image}>
+              <div className="col-6 col-md-3 col-sm-4" key={e.image}>
                 <Fade delay={i*100} triggerOnce direction="right">
                 <div className="card mb-3" style={{border:'none'}}>
                   <img src={e.image} className="card-img-top" alt=".img" style={{aspectRatio:'5/4'}} />

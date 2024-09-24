@@ -93,7 +93,7 @@ function Home() {
     </div>
   
       <MostLiked/>
-      <Fade triggerOnce direction='left' cascade damping={0.4}>
+     
    
       <HealthNews cardbreak={6} cardspilit={6}/>
     
@@ -105,7 +105,6 @@ function Home() {
    
       <DietPlans/>
     
-    </Fade>
     
 
     </>
