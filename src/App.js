@@ -14,6 +14,7 @@ import News from './component/News';
 import LoadingBar from 'react-top-loading-bar'
 import { useState } from 'react';
 import About from './component/About';
+import Header from './component/Header';
 function App() {
   const[progress,setProgress] =useState(0);
   return (
@@ -32,6 +33,7 @@ function App() {
       <Route exact path='/blog' element={<Blog setProgress = {setProgress} />}/>
       <Route exact path='/news' element={<News setProgress = {setProgress} />}/>
       <Route exact path='/about' element={<About setProgress = {setProgress} />}/>
+      <Route exact path='/header' element={<Header setProgress = {setProgress} />}/>
     </Routes>
    </div>
     <Footer/>

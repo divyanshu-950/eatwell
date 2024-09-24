@@ -1,7 +1,6 @@
-import React, {useState } from "react";
+import React, {useState,useEffect } from "react";
 import logo from './img/homelogo.svg'
-import { Link } from "react-router-dom";
-import { Fade } from "react-awesome-reveal";
+import { Link ,useLocation} from "react-router-dom";
 export default function Navbar() {
  
   const[background,setBackground] = useState(false)
@@ -14,6 +13,18 @@ export default function Navbar() {
 
   }
   window.addEventListener('scroll',changeBackground)
+  let location = useLocation();
+  useEffect(()=>{
+ setTimeout(()=>{
+  const element = document.getElementById("navbarSupportedContent");
+  if(element.classList.contains('show')){
+    element.classList.remove('show');
+  }
+ },700)
+  },[location])
+
+
+
   return (
     <div>
       <nav
@@ -75,7 +86,7 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className="dropdown-item" to="/header">
                       Appetizers
                     </Link>
                   </li>

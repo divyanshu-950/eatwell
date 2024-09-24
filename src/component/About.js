@@ -1,5 +1,5 @@
 import React from "react";
-import meimg from "./img/aboutme.jpg";
+import meimg from "./img/about.jpg";
 import fruit from "./img/about2.png";
 import { Fade } from "react-awesome-reveal";
 import me from'./img/me.png'
@@ -128,6 +128,7 @@ function About(props) {
       </div>
      </div>
      </div>
+     <hr />
      {props.setProgress(100)}
      </>
   );
