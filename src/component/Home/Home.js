@@ -1,10 +1,4 @@
 import React from 'react'
-import img1 from "../img/img1.jpg";
-import img2 from "../img/img9.jpg";
-import img3 from "../img/img4.jpg";
-import img4 from "../img/img10.jpg";
-import img5 from "../img/img7.jpg";
-import img6 from "../img/img8.jpg";
 import MostLiked from './MostLiked';
 import HealthNews from './HealthNews';
 import DietPlans from './DietPlans';
@@ -14,10 +8,11 @@ import Header from '../Header';
 function Home(props) {
   return (
     <>
+    {props.setProgress(20)}
        <Header/>
   
       <MostLiked/>
-     
+      {props.setProgress(60)}
    
       <HealthNews cardbreak={6} cardspilit={6}/>
     
@@ -25,12 +20,12 @@ function Home(props) {
    
       <Best10/>
    
-    
+      {props.setProgress(80)}
    
       <DietPlans/>
     
     
-
+      {props.setProgress(100)}
     </>
 
   )

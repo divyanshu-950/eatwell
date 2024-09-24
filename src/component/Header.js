@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 function Header(props) {
   return (
     <div>
-      <div className="mb-3 pt-3">
+      <div className="mb-2 pt-3">
        
 
         <div className="container" style={{ padding: "30px 10px" }}>
