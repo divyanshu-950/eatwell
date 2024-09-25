@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/eatwell/static/css/main.8e8cf3ff.css",
-    "main.js": "/eatwell/static/js/main.bc01f467.js",
+    "main.css": "/eatwell/static/css/main.0f87d2e6.css",
+    "main.js": "/eatwell/static/js/main.8f491fbf.js",
     "static/js/453.592dc99b.chunk.js": "/eatwell/static/js/453.592dc99b.chunk.js",
     "static/media/me.png": "/eatwell/static/media/me.24b7cffb54882575e99a.png",
     "static/media/hl2.jpg": "/eatwell/static/media/hl2.c84c89067e9162b3d580.jpg",
@@ -15,12 +15,12 @@
     "static/media/H1.png": "/eatwell/static/media/H1.1a761ea516b20485a81d.png",
     "static/media/about2.png": "/eatwell/static/media/about2.27fb17b5dcd0b5746cbb.png",
     "index.html": "/eatwell/index.html",
-    "main.8e8cf3ff.css.map": "/eatwell/static/css/main.8e8cf3ff.css.map",
-    "main.bc01f467.js.map": "/eatwell/static/js/main.bc01f467.js.map",
+    "main.0f87d2e6.css.map": "/eatwell/static/css/main.0f87d2e6.css.map",
+    "main.8f491fbf.js.map": "/eatwell/static/js/main.8f491fbf.js.map",
     "453.592dc99b.chunk.js.map": "/eatwell/static/js/453.592dc99b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e8cf3ff.css",
-    "static/js/main.bc01f467.js"
+    "static/css/main.0f87d2e6.css",
+    "static/js/main.8f491fbf.js"
   ]
 }
