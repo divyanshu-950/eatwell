@@ -1,10 +1,11 @@
 import React, {useState,useEffect } from "react";
 import logo from './img/homelogo.svg'
 import { Link ,useLocation} from "react-router-dom";
+
 export default function Navbar() {
  
   const[background,setBackground] = useState(false)
-   
+   const device = window.matchMedia("(max-width: 990px)").matches;
   const changeBackground = () =>{
     if(window.scrollY >= 20)
       setBackground(true)
@@ -20,19 +21,20 @@ export default function Navbar() {
   if(element.classList.contains('show')){
     element.classList.remove('show');
   }
- },700)
+ },400)
   },[location])
 
 
 
   return (
-    <div>
+    <div >
+    
       <nav
-        className={`navbar ${background?'bactive':''} navbar-expand-lg fixed-top`}
-       
+        className={`navbar navbar-expand-lg fixed-top `}
+        style={background?{backgroundColor:'whitesmoke'}:{backgroundColor:"inherit"}}
       >
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+        <div className="container-fluid ">
+          <Link className="navbar-brand " to="/">
           <b>
             EAT
             <img
@@ -57,18 +59,18 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className={`collapse navbar-collapse ${device?'bg-light px-3 my-2 shadow rounded':'' }`} id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <Link
-                  className={`nav-link dropdown-toggle  ${location.pathname==="/"?"active":""}`}
+                  className={`nav-link dropdown-toggle `}
                   
                   to="/"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span  className="healthtips">Healthy Recipes</span>
+                  <span  className="healthtips ">Healthy Recipes</span>
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
@@ -111,17 +113,17 @@ export default function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className={`dropdown-item ${location.pathname==="/highprotein"?"active":""}`} to="/highprotein">
                       High-Protein
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className={`dropdown-item ${location.pathname==="/weightloss"?"active":""}`} to="/weightloss">
                       Weight-Loss
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className={`dropdown-item ${location.pathname==="/antiinflammatory"?"active":""}`}  to="/antiinflammatory">
                       Anti-Inflammatory
                     </Link>
                   </li>
@@ -143,18 +145,7 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                style={{border:'#f8912b  1px solid',backgroundColor:'transparent'}}
-              />
-              <button className="btn btn-outline-warning" type="submit">
-                Search
-              </button>
-            </form>
+           
           </div>
         </div>
       </nav>

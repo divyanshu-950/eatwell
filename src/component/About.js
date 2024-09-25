@@ -42,7 +42,7 @@ function About(props) {
               justifyContent: " space-evenly",
             }}
           >
-            <Fade direction="up" triggerOnce duration={1000}>
+            <Fade direction="up" triggerOnce duration={1800}>
               {" "}
               <div
                 className="container"
@@ -88,15 +88,15 @@ function About(props) {
       <Fade direction="up" triggerOnce duration={1000}>
       <p className="fs-5 fn-2 text-center">Back in 2021, when I started college with an ambition to achieve something, my friends and I decided to rent a flat instead of going to the college hostel. However, as we began our journey, the biggest challenge we faced was preparing food that would keep us both full and healthy. It wasn't that we didn’t have the time; we simply didn’t know what to make or how to make it. Sometimes we would go an entire day without eating, or we would rely on junk food, not realizing how harmful it was.   </p>
       </Fade>
-      <Fade direction="left" triggerOnce duration={1000}>
+      <Fade direction="up" triggerOnce duration={1100}>
       <p className="fs-5 fn-2 text-center">After some time, we started looking for weddings to crash. At night, we would go to the terrace, look for wedding lights in the distance, and then follow them. We would sneak into the weddings uninvited, fill our stomachs, and leave quietly.</p>
       </Fade>
-      <Fade direction="left" triggerOnce duration={1000}>
+      <Fade direction="up" triggerOnce duration={1200}>
       <p className="fs-5 fn-2 text-center">After graduating, I decided to create this website to help students who come from far away to pursue their dreams and face similar food challenges. The website provides healthy recipes, breakfast ideas, lunch, dinner, desserts, and many more recipes they can explore and try.</p>
     </Fade>
     </div>
     {props.setProgress(65)}
-     <div className="container shadow-lg mb-5" style={{backgroundColor:'lavenderblush'}}>
+     <div className="container shadow-lg my-5" style={{backgroundColor:'lavenderblush'}}>
      <p
        className="fs-1 text-center pt-5"
        style={{
@@ -118,7 +118,7 @@ function About(props) {
             </div></div>
             {props.setProgress(85)}
       <div className="col-12 col-md-6">
-      <Fade direction="up" damping={200}triggerOnce duration={1000} >
+      <Fade direction="up" damping={200}triggerOnce duration={1200} >
         <p className="fs-5 fn-2 text-center"> Hi! I am Divyanshu Kpoor.</p>
         <p className="fs-5 fn-2 text-center">I am a Software Devloper and Part Time Blogger</p>
         <p className="fs-5 fn-2 text-center">I am from India, Born in Dehri-On-Sone, Bihar. I have a Bachelor's degree in Computer Applications from Uttaranchal University, Dehradun</p>

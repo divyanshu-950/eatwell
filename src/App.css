@@ -36,9 +36,8 @@
     transform: rotate(360deg);
   }
 }
-
-.navbar:has(.show) {
-  background-color: whitesmoke;
+.shoow{
+  background-color: inherit;
 }
 .bactive {
   background-color: whitesmoke;
