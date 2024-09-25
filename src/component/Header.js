@@ -18,7 +18,7 @@ function Header(props) {
                 justifyContent: " space-evenly",
               }}
             >
-              <Fade direction="up" triggerOnce duration={1000}>
+              <Fade direction="up" triggerOnce duration={1600}>
                 {" "}
                 <div
                   className="container"

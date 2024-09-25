@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import cook from "./img/cooking.png";
 import HealthNews from "./Home/HealthNews";
+import { Fade } from "react-awesome-reveal";
 function Blog(props) {
   let location = useLocation();
   let data = location.state;
@@ -12,13 +13,15 @@ function Blog(props) {
       <div className="container" style={{ padding: "10px 10vw" }}>
         <div className="col-12 col-md-8">
           <p className="text-center my-4 mb-5">
-            <span
+          <Fade triggerOnce direction="up" duration={1000}>
+          <span
               className="fs-2 "
               style={{ borderBottom: "2px solid lightgrey" }}
             >
               {" "}
               <strong>{data.name}</strong>
             </span>
+          </Fade>
           </p>
 
           <p className="my-3">
@@ -61,9 +64,10 @@ function Blog(props) {
               alt="img"
             />
           </div>
+          <Fade direction="up" triggerOnce duration={1000}>
           <div
             className="mb-1 my-4 p-2 shadow-lg "
-            style={{ lineHeight: "40px", backgroundColor: "lavenderblush" }}
+            style={{ lineHeight: "40px", backgroundColor: "#d3d3d3",borderRadius:'15px'}}
           >
             <strong>
               <p className="d-flex fs-5 justify-content-between" >
@@ -90,6 +94,8 @@ function Blog(props) {
               <span className=" fn-5 mx-2 fs-5">Serving: <i className="fa-solid fa-bowl-food" style={{ color: "#7d9211" }}></i> {data.serving}</span>
             </strong>
           </div>
+          </Fade>
+          <Fade  triggerOnce duration={1000}>
           <p className="mx-2 fs-3 fn-4 fw-bolder mb-1 mt-4">Ingredients </p>
           <hr className="mt-0" />
           { props.setProgress(40)}
@@ -106,8 +112,9 @@ function Blog(props) {
           })}
           <p className="mx-2 fs-3 fn-4 fw-bolder mb-1 mt-4">Directions </p>
           <hr className="mt-0" />
+          </Fade>
           {Object.values(data.steps).map((element, index) => {
-            return (<>
+            return (<Fade triggerOnce direction="up" duration={1500}>
               <p className=" fn-5 mx-1 fs-5"><strong>STEP: {index+1}</strong></p>
               <p className=" fn-5 mx-2" style={{ fontSize: "1.2em", textAlign:'justify'}}>
                 <i
@@ -116,7 +123,7 @@ function Blog(props) {
                 ></i>{" "}
                 {element}{" "}
               </p>
-              </>
+              </Fade>
             );
           })}
         </div>

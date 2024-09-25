@@ -61,7 +61,8 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className={`nav-link dropdown-toggle  ${location.pathname==="/"?"active":""}`}
+                  
                   to="/"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -71,27 +72,27 @@ export default function Navbar() {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="/quick_easy">
+                    <Link className={`dropdown-item  ${location.pathname==="/quick_easy"?"active":""}`} to="/quick_easy">
                       Quick & Easy
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/breakfastbrunch">
+                    <Link className={`dropdown-item  ${location.pathname==="/breakfastbrunch"?"active":""}`} to="/breakfastbrunch">
                       Breakfast & Brunch
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className={`dropdown-item  ${location.pathname==="/lunch"?"active":""}`}to="/lunch">
                       Lunch
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/header">
+                    <Link className={`dropdown-item  ${location.pathname==="/appetizer"?"active":""}`} to="/appetizer">
                       Appetizers
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/">
+                    <Link className={`dropdown-item  ${location.pathname==="/smoothies"?"active":""}`} to="/smoothies">
                       Smoothies
                     </Link>
                   </li>
@@ -127,17 +128,17 @@ export default function Navbar() {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link className={`nav-link  ${location.pathname==="/healthylifestyle"?"active":""}`} aria-current="page" to="/healthylifestyle">
                   <span className="healthtips">Healthy Lifestyles</span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/news">
+                <Link className={`nav-link  ${location.pathname==="/news"?"active":""}`} aria-current="page" to="/news">
                   <span className="healthtips">News </span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/about">
+                <Link className={`nav-link  ${location.pathname==="/about"?"active":""}`} aria-current="page" to="/about">
                   <span className="healthtips">About us</span>
                 </Link>
               </li>

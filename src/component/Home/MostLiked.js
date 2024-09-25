@@ -23,10 +23,10 @@ function MostLiked() {
   return (
     <div className="container-md  ">
       <p
-        className="ml-2 fn-4 text-center heading"
+        className="ml-2 fn-4 text-center fs-2"
         style={{
           margin: "0 0 0 0",
-          fontWeight: "700",
+          fontWeight: "500",
         
         }}
       >

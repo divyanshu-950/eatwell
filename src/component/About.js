@@ -96,7 +96,7 @@ function About(props) {
     </Fade>
     </div>
     {props.setProgress(65)}
-     <div className="container" style={{backgroundColor:'lavenderblush'}}>
+     <div className="container shadow-lg mb-5" style={{backgroundColor:'lavenderblush'}}>
      <p
        className="fs-1 text-center pt-5"
        style={{

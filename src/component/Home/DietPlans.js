@@ -9,7 +9,7 @@ function DietPlans() {
     <div className="container-md">
         
       <p
-        className=" headline fn-4 text-center"
+        className="fs-2 fn-4 text-center"
         style={{
           fontWeight: "700",
           
