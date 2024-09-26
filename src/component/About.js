@@ -86,13 +86,13 @@ function About(props) {
         <span style={{borderBottom:'2px solid lightgrey'}}>My Story</span>
       </p>
       <Fade direction="up" triggerOnce duration={1000}>
-      <p className="fs-5 fn-2 text-center">Back in 2021, when I started college with an ambition to achieve something, my friends and I decided to rent a flat instead of going to the college hostel. However, as we began our journey, the biggest challenge we faced was preparing food that would keep us both full and healthy. It wasn't that we didn’t have the time; we simply didn’t know what to make or how to make it. Sometimes we would go an entire day without eating, or we would rely on junk food, not realizing how harmful it was.   </p>
+      <p className="fs-5 fn-2 text-center">Back in 2021, when I started college with big ambitions, my friends and I made the decision to rent a flat instead of staying in the college hostel. However, as exciting as it was to begin this new chapter, we quickly encountered a major challenge: preparing meals that were both filling and healthy. It wasn’t a matter of time, but rather a lack of knowledge. We had no idea what to cook or how to go about it. Some days, we went without eating or resorted to junk food, completely unaware of the long-term effects it could have on our health.</p>
       </Fade>
       <Fade direction="up" triggerOnce duration={1100}>
-      <p className="fs-5 fn-2 text-center">After some time, we started looking for weddings to crash. At night, we would go to the terrace, look for wedding lights in the distance, and then follow them. We would sneak into the weddings uninvited, fill our stomachs, and leave quietly.</p>
+      <p className="fs-5 fn-2 text-center">n desperation, we got creative—by crashing weddings. At night, we would gather on the terrace, scan the horizon for wedding lights, and then set off in search of them. We’d sneak in, enjoy a hearty meal, and leave quietly, with full stomachs and a bit of mischief.</p>
       </Fade>
       <Fade direction="up" triggerOnce duration={1200}>
-      <p className="fs-5 fn-2 text-center">After graduating, I decided to create this website to help students who come from far away to pursue their dreams and face similar food challenges. The website provides healthy recipes, breakfast ideas, lunch, dinner, desserts, and many more recipes they can explore and try.</p>
+      <p className="fs-5 fn-2 text-center">After graduating, I realized how common this struggle is for students who move far from home in pursuit of their dreams. That’s what inspired me to create a website designed to help students facing similar challenges with food. The website offers a variety of healthy, easy-to-make recipes—covering breakfast, lunch, dinner, desserts, and more—to make cooking accessible and enjoyable for them.</p>
     </Fade>
     </div>
     {props.setProgress(65)}
