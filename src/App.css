@@ -152,6 +152,9 @@ body {
 .fn-5{
   font-family: "Roboto", sans-serif;
 }
+.fn-6{
+  font-family: "Whisper", 'cursive';
+}
 .card{
   transition: transform .2s;
 }
