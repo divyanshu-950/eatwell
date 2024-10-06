@@ -1,15 +1,17 @@
 import React from "react";
 import img from "./img/H1.png";
-import img2 from'./img/img7.jpg'
 import { Fade } from "react-awesome-reveal";
 function Header(props) {
   return (
     <div>
-      <div className="mb-2 pt-3">
+      <div className=" " >
        
 
-        <div className="container" style={{ padding: "30px 10px" }}>
-          <div className="row  ">
+        <div className="container-fluid">
+          <div className="row shadow-lg pt-5 pb-2 mb-3"  style={{backgroundColor:' rgb(255, 240, 245, 0.2)',
+    border: '2px solid rgb(211, 211, 211, 0.1)',
+    borderRadius: '10px'
+    }}>
           <div
               className="col-12 col-md-12 my-5 "
               style={{

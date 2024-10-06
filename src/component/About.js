@@ -96,7 +96,7 @@ function About(props) {
     </Fade>
     </div>
     {props.setProgress(65)}
-     <div className="container shadow-lg my-5" style={{backgroundColor:'lavenderblush'}}>
+     <div className="container shadow-lg my-5" style={{backgroundColor:'rgb(211,211,211,0.2',borderRadius:'30px'}}>
      <p
        className="fs-1 text-center pt-5"
        style={{
@@ -105,10 +105,10 @@ function About(props) {
        }}
      >
        {" "}
-       <span style={{borderBottom:'2px solid lightgrey'}}>About Me</span>
+       <span style={{borderBottom:'2px solid rgb(211,211,211,0.2)'}}>About Me</span>
      </p>
-     <div className="row">
-      <div className="col-12 col-md-6"> 
+     <div className="row justify-content-center">
+      <div className="col-12 col-md-4"> 
         <div className="container" style={{ objectFit: "contain",height:'350px',width:'350px' }}>
               <img
                 src={me}

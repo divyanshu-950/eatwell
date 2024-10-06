@@ -29,7 +29,7 @@ function QuickEasy(props) {
       <div className="container-md mt-5">
         <p style={{ textAlign: "center" }}>
           <span
-            className="ml-2 heading fn-2"
+            className="ml-2 heading fn-4"
             style={{
               margin: "0 0 0 0",
               fontWeight: "500",
@@ -39,7 +39,7 @@ function QuickEasy(props) {
             {props.title}
           </span>
         </p>
-        <p className="mx-1 fn-1  text-center t-content ">
+        <p className="mx-1 fn-2  text-center t-content ">
           This collection of {props.title} is designed to fit into your busy
           schedule while delivering the taste and nourishment you crave.{" "}
         </p>
@@ -59,7 +59,7 @@ function QuickEasy(props) {
                       />
                       <div className="card-body">
                         <p
-                          className="card-title"
+                          className="card-title fn-5"
                           style={{ fontSize: "1.3rem" }}
                         >
                           <strong>{e.name}</strong>

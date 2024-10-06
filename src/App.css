@@ -78,7 +78,7 @@
   opacity: 0.9;
 }
 body {
-  background-color: white;
+ background-image: url('./component/img/Clouds.jpg');
   width: 100vw;
 }
 .d-block {

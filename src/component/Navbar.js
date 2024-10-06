@@ -59,7 +59,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           
-          <div className={`collapse navbar-collapse ${device?'bg-light px-3 my-2 shadow rounded':'' }`} id="navbarSupportedContent">
+          <div className={`collapse navbar-collapse ${device?'bg-light px-3 my-2 shadow rounded':'' }`} id="navbarSupportedContent" >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <Link

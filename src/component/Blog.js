@@ -8,9 +8,9 @@ function Blog(props) {
   let data = location.state;
  
   return (
-    <div className=" row mt-5">
+    <div className=" container mt-5">
       { props.setProgress(20)}
-      <div className="container" style={{ padding: "10px 10vw" }}>
+      <div className="row" style={{ padding: "10px 1vw" }}>
         <div className="col-12 col-md-8">
           <p className="text-center my-4 mb-5">
           <Fade triggerOnce direction="up" duration={1000}>
@@ -127,11 +127,11 @@ function Blog(props) {
             );
           })}
         </div>
-        <div className="col-12 col-md-4"></div>
-        <hr />
-        <hr />
+        <div className="col-12 col-md-4 mt-5 pt-5 px-1">
+
         { props.setProgress(80)}
-        <HealthNews cardbreak={6} cardspilit={6}/>
+        <HealthNews cardbreak={6} cardspilit={12}/>
+        </div>
       </div>
       { props.setProgress(100)}
     </div>
