@@ -100,35 +100,6 @@ export default function Navbar() {
                   </li>
                 </ul>
               </li>
-
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                 <span className="healthtips"> Special Diets</span>
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className={`dropdown-item ${location.pathname==="/highprotein"?"active":""}`} to="/highprotein">
-                      High-Protein
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={`dropdown-item ${location.pathname==="/weightloss"?"active":""}`} to="/weightloss">
-                      Weight-Loss
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={`dropdown-item ${location.pathname==="/antiinflammatory"?"active":""}`}  to="/antiinflammatory">
-                      Anti-Inflammatory
-                    </Link>
-                  </li>
-                </ul>
-              </li>
               <li className="nav-item">
                 <Link className={`nav-link  ${location.pathname==="/healthylifestyle"?"active":""}`} aria-current="page" to="/healthylifestyle">
                   <span className="healthtips">Healthy Lifestyles</span>

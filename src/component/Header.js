@@ -8,7 +8,7 @@ function Header(props) {
        
 
         <div className="container-fluid">
-          <div className="row shadow-lg pt-5 pb-2 mb-3"  style={{backgroundColor:' rgb(255, 240, 245, 0.2)',
+          <div className="row pt-5 pb-2 mb-3"  style={{backgroundColor:' rgb(255, 240, 245, 0.2)',
     border: '2px solid rgb(211, 211, 211, 0.1)',
     borderRadius: '10px'
     }}>

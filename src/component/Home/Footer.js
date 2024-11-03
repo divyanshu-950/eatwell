@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from'../img/homelogo.svg'
+import { Link } from 'react-router-dom'
 function Footer() {
   return (
 
@@ -22,18 +23,18 @@ function Footer() {
 
 
       <div>
-        <a href="/" className="text-white me-4 alink">
+        <Link to="/" className="text-white me-4 alink">
           <i className="fab fa-google"></i>
-        </a>
-        <a href="/" className="text-white me-4 alink">
+        </Link>
+        <Link to="/" className="text-white me-4 alink">
           <i className="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/divyanshuk006/" className="text-white me-4 alink">
+        </Link>
+        <Link to="https://www.linkedin.com/in/divyanshuk006/" className="text-white me-4 alink">
           <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/divyanshu-950" className="text-white me-4 alink">
+        </Link>
+        <Link to="https://github.com/divyanshu-950" className="text-white me-4 alink">
           <i className="fab fa-github"></i>
-        </a>
+        </Link>
       </div>
 
     </section>
@@ -62,26 +63,7 @@ function Footer() {
 
 
 
-          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-            <h6 className="text-uppercase fw-bold">Healthy Diet Plan</h6>
-            <hr
-                className="mb-4 mt-0 d-inline-block mx-auto"
-                style={{width: '60px', backgroundColor:' #7c4dff', height: '2px'}}
-                />
-            <p>
-              <a href="/" className="text-white alink">Hight-Protein Diet Plan</a>
-            </p>
-            <p>
-              <a href="/" className="text-white alink">Weight-Loss Diet Plan</a>
-            </p>
-            <p>
-              <a href="/" className="text-white alink">AntiInflammatory Diet Plan</a>
-            </p>
-            <p>
-              <a href="/" className="text-white alink">Gut Healthy Diet Plan</a>
-            </p>
-          </div>
+       
 
 
 
@@ -93,16 +75,16 @@ function Footer() {
                 style={{width: '60px', backgroundColor:' #7c4dff', height: '2px'}}
                 />
             <p>
-              <a href="/" className="text-white alink">Breakfast & Brunch</a>
+              <Link to="/" className="text-white alink">Breakfast & Brunch</Link>
             </p>
             <p>
-              <a href="/" className="text-white alink">Lunch</a>
+              <Link to="/" className="text-white alink">Lunch</Link>
             </p>
             <p>
-              <a href="/" className="text-white alink">Desserts</a>
+              <Link to="/" className="text-white alink">Desserts</Link>
             </p>
             <p>
-              <a href="/" className="text-white alink">Smoothies</a>
+              <Link to="/" className="text-white alink">Smoothies</Link>
             </p>
           </div>
 
@@ -132,8 +114,8 @@ function Footer() {
          style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}
          >
       © 2024 Copyright: 
-      <a className="text-white alink" href="/"
-         > EatWell.com</a >
+      <Link className="text-white alink" to="/"
+         > EatWell.com</Link >
     </div>
 
   </footer>

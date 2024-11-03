@@ -22,7 +22,7 @@ function Home(props) {
    
       {props.setProgress(80)}
    
-      <DietPlans/>
+     
     
     
       {props.setProgress(100)}
