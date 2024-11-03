@@ -1,7 +1,6 @@
 import React from 'react'
 import MostLiked from './MostLiked';
 import HealthNews from './HealthNews';
-import DietPlans from './DietPlans';
 import Best10 from './Best10';
 
 import Header from '../Header';
