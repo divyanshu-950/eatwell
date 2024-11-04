@@ -89,11 +89,6 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/appetizer"?"active":""}`} to="/appetizer">
-                      Appetizers
-                    </Link>
-                  </li>
-                  <li>
                     <Link className={`dropdown-item  ${location.pathname==="/smoothies"?"active":""}`} to="/smoothies">
                       Smoothies
                     </Link>

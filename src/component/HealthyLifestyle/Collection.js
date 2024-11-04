@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import HealthNews from "../Home/HealthNews";
-import Blog from "../Blog";
 import { useNavigate } from "react-router-dom";
 
 function Collection() {

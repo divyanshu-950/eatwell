@@ -18,10 +18,6 @@ function Footer() {
              style={{backgroundcolor: "#6351ce"}}
              >
 
-    
-
-
-
       <div>
         <Link to="/" className="text-white me-4 alink">
           <i className="fab fa-google"></i>
@@ -62,11 +58,6 @@ function Footer() {
           </div>
 
 
-
-       
-
-
-
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
             <h6 className="text-uppercase fw-bold">Healthy Recipes</h6>
@@ -75,16 +66,16 @@ function Footer() {
                 style={{width: '60px', backgroundColor:' #7c4dff', height: '2px'}}
                 />
             <p>
-              <Link to="/" className="text-white alink">Breakfast & Brunch</Link>
+              <Link to="/breakfastbrunch" className="text-white alink">Breakfast & Brunch</Link>
             </p>
             <p>
-              <Link to="/" className="text-white alink">Lunch</Link>
+              <Link to="/lunch" className="text-white alink">Lunch</Link>
             </p>
             <p>
-              <Link to="/" className="text-white alink">Desserts</Link>
+              <Link to="/quick_easy" className="text-white alink">Quick&Easy</Link>
             </p>
             <p>
-              <Link to="/" className="text-white alink">Smoothies</Link>
+              <Link to="/smoothies" className="text-white alink">Smoothies</Link>
             </p>
           </div>
 

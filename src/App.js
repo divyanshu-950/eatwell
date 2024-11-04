@@ -29,6 +29,8 @@ function App() {
       <Route exact path='/' element={< Home setProgress = {setProgress}/>}/>
       <Route exact path='/quick_easy' element={<QuickEasy setProgress = {setProgress}  key={"quickeasy"} url={'quickeasy'} title={"QUICK & EASY RECIPES"}  />}/>
       <Route exact path='/breakfastbrunch' element={<QuickEasy setProgress = {setProgress}  key={"breakfastbrunch"} url={'breakfastbrunch'} title={"Breakfast & Brunches"}  />}/>
+      <Route exact path='/smoothies' element={<QuickEasy setProgress = {setProgress}  key={"smoothie"} url={'smoothies'} title={"Smoothies"}  />}/>
+      <Route exact path='/lunch' element={<QuickEasy setProgress = {setProgress}  key={"lunch"} url={'lunch'} title={"Lunch"}  />}/>
       <Route exact path='/collection' element={<Collection setProgress = {setProgress} />}/>
       <Route exact path='/blog' element={<Blog setProgress = {setProgress} />}/>
       <Route exact path='/news' element={<News setProgress = {setProgress} />}/>

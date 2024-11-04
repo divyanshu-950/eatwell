@@ -2,24 +2,42 @@ import React, { useState, useEffect } from "react";
 import cook from "../img/cooking.png";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Spinner";
+
 
 function QuickEasy(props) {
+  const [page,setpage] = useState(8);
+  const[length,setlength] =useState(0)
+  const[loading,setloading] =useState(false);
   const [recipes, setRecipes] = useState();
   const navigate = useNavigate();
   const getData = async () => {
     props.setProgress(10);
+    setloading(true)
     let url = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/${props.url}.json`;
     props.setProgress(40);
     let data = await fetch(url);
     let parseddata = await data.json();
     props.setProgress(60);
-    setRecipes(parseddata.recipes);
+    setlength(parseddata.recipes.length)
+    setRecipes(parseddata.recipes.slice(0,page));
     props.setProgress(100);
+    setloading(false);
   };
 
   useEffect(() => {
     getData();
   }, []);
+  
+const handleclick1=async()=>{
+  setloading(true)
+  let url = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/${props.url}.json`;
+  let data = await fetch(url);
+  let parseddata = await data.json();
+  setRecipes(recipes.concat(parseddata.recipes.slice(page,(page+12))));
+  setpage(page+12);
+  setloading(false);
+}
 
   const handleclick = (recipe) => {
     navigate("/blog", { state: recipe });
@@ -60,7 +78,7 @@ function QuickEasy(props) {
                       <div className="card-body">
                         <p
                           className="card-title fn-5"
-                          style={{ fontSize: "1.3rem" }}
+                          style={{ fontSize: "1.1rem" }}
                         >
                           <strong>{e.name}</strong>
                         </p>
@@ -139,6 +157,8 @@ function QuickEasy(props) {
                 </div>
               );
             })}
+            {loading&&<Spinner/>}
+            <div className="d-flex justify-content-center my-4"> <button  style={page > length?{display:'none'}:{}}className="btn  btn-primary fn-2" onClick={handleclick1}> <strong>Load More <i class="fa-solid fa-chevron-down"></i></strong></button></div>
         </div>
       </div>
     </div>
