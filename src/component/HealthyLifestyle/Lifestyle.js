@@ -42,7 +42,7 @@ const handleclick=async()=>{
           to="/news"
           className="ml-2 headline mt-5"
           style={{
-            margin: "10px 0 1vw 0",
+            margin: "10px 0 0 0",
             display: "flex",
             justifyContent: "center",
             textDecoration: "none",
@@ -61,28 +61,32 @@ const handleclick=async()=>{
           </p>
         
         </Link>
-     
+     <hr className="m-0" />
 
         <div className="row">
        
           {blogs && 
             blogs.map((e,i) => {
               return (
-                  <>
-                 
-                <div className="col-6 col-md-4 col-sm-4 my-2"  key={i}>
-                <Fade delay={(i%12)*60} triggerOnce direction="right">
-                  <Link className='alink' to= {`/collection/${e.url}`} rel="noreferrer">
-                  <div
+                <>
+                  <div className="col-6 col-md-4 col-sm-4 my-2 " key={i}>
+                    <Fade delay={(i % 12) * 60} triggerOnce direction="right">
+                      <Link
+                        className="alink"
+                        to={`/collection/${e.url}`}
+                        rel="noreferrer"
+                      >
+                       
+                        <div
                     className="card mb-3 mx-2 my-2"
                     style={{ backgroundColor: "inherit", border: "none" }}
                   >
                     <div className="row g-0">
-                      <div className="col-md-4">
+                      <div className="col-md-4 mt-1">
                         <img
                           style={{ aspectRatio: 2 / 1 }}
                           src={e.image}
-                          className="img-fluid rounded-start"
+                          className="img-fluid rounded-start mt-2"
                           alt="img"
                         />
                       </div>
@@ -113,9 +117,9 @@ const handleclick=async()=>{
                       </div>
                     </div>
                   </div>
-                  </Link>
-                </Fade>
-                </div>
+                      </Link>
+                    </Fade>
+                  </div>
                 </>
               );
             })

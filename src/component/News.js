@@ -42,7 +42,7 @@ const handleclick=async()=>{
           to="/news"
           className="ml-2 headline mt-5"
           style={{
-            margin: "10px 0 1vw 0",
+            margin: "10px 0 0 0",
             display: "flex",
             justifyContent: "center",
             textDecoration: "none",
@@ -78,7 +78,7 @@ const handleclick=async()=>{
                     style={{ backgroundColor: "inherit", border: "none" }}
                   >
                     <div className="row g-0">
-                      <div className="col-md-4">
+                      <div className="col-md-4 mt-3">
                         <img
                           style={{ aspectRatio: 2 / 1 }}
                           src={e.urlToImage}
@@ -106,7 +106,7 @@ const handleclick=async()=>{
                           
                           <p className="card-text">
                             <small className="text-body-secondary">
-                              by {e.author}
+                              by {e.author?e.author:"unknown"}
                             </small>
                           </p>
                         </div>

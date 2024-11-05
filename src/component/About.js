@@ -120,7 +120,7 @@ function About(props) {
       <div className="col-12 col-md-6">
       <Fade direction="up" damping={200}triggerOnce duration={1200} >
         <p className="fs-5 fn-2 text-center"> Hi! I am <span className="fn-6 fw-bold fs-2">Divyanshu Kapoor.</span></p>
-        <p className="fs-5 fn-2 text-center">I am a a Software Developer and part-time Blogger from India, born in Dehri-On-Sone, Bihar. I hold a Bachelor's degree in Computer Applications from Uttaranchal University, Dehradun.
+        <p className="fs-5 fn-2 text-center">I am a a Software Developer born in Dehri-On-Sone, Bihar. I hold a Bachelor's degree in Computer Applications from Uttaranchal University, Dehradun.
 
 </p>
         <p className="fs-5 fn-2 text-center">Eatwell is my personal space where I share my love for food. As the voice, author, and creator of Eatwell, I’m passionate about everything from fresh, green leafy vegetables to delicious smoothies and indulgent desserts. Beyond food, I have a deep love for traveling, exploring different cuisines, and, of course, developing new applications.</p>

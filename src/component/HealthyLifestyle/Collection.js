@@ -46,12 +46,8 @@ function Collection(props) {
             {title}
           </span>
         </p>
-        <p className="mx-1 fn-1  text-center t-content ">
-          This collection of {title} recipes is designed to Provide you
-          Varition, Different Flavour and unique Taste while delivering the
-          nourishment and taste you crave.{" "}
-        </p>
-        <hr className="mx-2" />
+        
+     
         <div className="row">
           <div className="col-12 col-md-8">
             <div className="container">
@@ -114,7 +110,7 @@ function Collection(props) {
                 );
               })}
           </div>
-          <div className="col-12 col-md-4 px-2">
+          <div className="col-12 col-md-4 px-2 px-5">
             <HealthNews cardbreak={6} cardspilit={12} />
           </div>
         </div>

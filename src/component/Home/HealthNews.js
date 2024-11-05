@@ -43,7 +43,7 @@ function HealthNews(props) {
                     style={{ backgroundColor: "inherit", border: "none" }}
                   >
                     <div className="row g-0">
-                      <div className="col-md-4">
+                      <div className="col-md-4 mt-3">
                         <img
                           style={{ aspectRatio: 2 / 1 }}
                           src={e.urlToImage}
