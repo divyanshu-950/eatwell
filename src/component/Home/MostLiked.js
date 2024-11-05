@@ -38,7 +38,7 @@ function MostLiked() {
         {recipes &&
           recipes.map((e,i) => {
             return (
-              <div className="col-6 col-sm-4 col-md-3" key={e.image}>
+              <div className="col-6 col-sm-4 col-md-3" key={i}>
                 <Fade duration={1000 +(i*50)} triggerOnce direction="up">
                 
                 <div className="card mb-3">

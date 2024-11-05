@@ -70,7 +70,7 @@ const handleclick=async()=>{
               return (
                   <>
                  
-                <div className="col-6 col-md-4 col-sm-4 my-2"  key={e.url}>
+                <div className="col-6 col-md-4 col-sm-4 my-2"  key={i}>
                 <Fade delay={(i%12)*60} triggerOnce direction="right">
                   <Link className='alink' to= {`/collection/${e.url}`} rel="noreferrer">
                   <div
@@ -121,7 +121,7 @@ const handleclick=async()=>{
             })
           }
           {loading&&<Spinner/>}
-           <div className="d-flex justify-content-center my-4"> <button  style={page > length?{display:'none'}:{}}className="btn  btn-primary fn-2" onClick={handleclick}> <strong>Load More <i class="fa-solid fa-chevron-down"></i></strong></button></div>
+           <div className="d-flex justify-content-center my-4"> <button  style={page > length?{display:'none'}:{}}className="btn  btn-primary fn-2" onClick={handleclick}> <strong>Load More <i className="fa-solid fa-chevron-down"></i></strong></button></div>
             
         </div>
       </div>
