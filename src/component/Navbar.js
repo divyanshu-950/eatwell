@@ -70,7 +70,7 @@ export default function Navbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span  className="healthtips ">Healthy Recipes</span>
+                  <span  className="healthtips ">Recipes</span>
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
@@ -97,7 +97,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className={`nav-link  ${location.pathname==="/healthylifestyle"?"active":""}`} aria-current="page" to="/healthylifestyle">
-                  <span className="healthtips">Healthy Lifestyles</span>
+                  <span className="healthtips">Healthy Lifestyle</span>
                 </Link>
               </li>
               <li className="nav-item">

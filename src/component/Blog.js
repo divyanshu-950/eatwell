@@ -130,7 +130,7 @@ function Blog(props) {
         <div className="col-12 col-md-4 mt-5 pt-5 px-1">
 
         { props.setProgress(80)}
-        <HealthNews cardbreak={6} cardspilit={12}/>
+        <HealthNews cardbreak={6} cardspilit={12} mt={2}/>
         </div>
       </div>
       { props.setProgress(100)}

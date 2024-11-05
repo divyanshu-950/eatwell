@@ -2,20 +2,26 @@ import React, { useState, useEffect } from "react";
 import HealthNews from "../Home/HealthNews";
 import { useNavigate } from "react-router-dom";
 
-function Collection() {
+import { useParams } from "react-router-dom";
+function Collection(props) {
+  const params = useParams();
+ 
   const [title, setTitle] = useState();
+  const [type, setType] = useState();
   const [description, setdescription] = useState();
   const [image, setImage] = useState();
   const [recipes, setRecipes] = useState();
   const navigate = useNavigate();
   const getData = async () => {
-    let url = `https://divyanshu-950.github.io/RecipeAPI/HealthyLifestyle/overnighoats.json`;
+    console.log(await(props.location));
+    let url = `https://divyanshu-950.github.io/RecipeAPI/HealthyLifestyle/vlogpages/${params.page}.json`;
     let data = await fetch(url);
     let parseddata = await data.json();
     setTitle(parseddata.title);
-    setdescription(parseddata.Description);
+    setdescription(parseddata.description);
     setImage(parseddata.image);
-    setRecipes(parseddata.recipes);
+    setRecipes(parseddata.content);
+    setType(parseddata.type);
   };
 
   useEffect(() => {
@@ -66,7 +72,7 @@ function Collection() {
               recipes.map((element, index) => {
                 return (
                   <div key={index}>
-                    <div className="container" style={{ objectFit: "contain" }}>
+                    <div className="container mb-5" style={{ objectFit: "contain" }}>
                       <strong>
                         {" "}
                         <p style={{ fontSize: "1.5em" }}>
@@ -74,7 +80,7 @@ function Collection() {
                         </p>
                       </strong>
                       <hr className="mt-0" />
-                      <img
+                      {element.image && <img
                         src={element.image}
                         style={{
                           height: "100%",
@@ -82,14 +88,14 @@ function Collection() {
                           aspectRatio: "3/2",
                         }}
                         alt="img"
-                      />
+                      />}
                       <p
-                        className="mt-5 mb-2"
+                        className="mt-3 mb-3"
                         style={{ textAlign: "justify", lineHeight: "25px" }}
                       >
                         {element.description}
                       </p>
-                      <button
+                     { type && <button
                         className="btn btn-sm mb-4"
                         style={{
                           backgroundColor: "darkslategrey",
@@ -102,6 +108,7 @@ function Collection() {
                         {" "}
                         View Recipe
                       </button>
+                      }
                     </div>
                   </div>
                 );

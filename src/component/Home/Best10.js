@@ -2,9 +2,9 @@ import React from "react";
 import bg from "../img/best10.jpg";
 import { Link } from "react-router-dom";
 function Best10() {
-  return (
+   return (
     <div className="container-fluid">
-    <Link to="/collection"  style={{textDecoration:'none',color:'black'}}>
+    <Link to= "/collection/overnighoats" style={{textDecoration:'none',color:'black'}}>
    <div className="row my-5" >
     <div className="col-12 col-md-8 p-0">
       <img src={bg} alt="img" className="my-0" style={{height:'100%',width:'100%'}}/>

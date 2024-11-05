@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-function News(props) {
+function Lifestyle(props) {
   const [page,setpage] = useState(12);
   const[length,setlength] =useState(0)
-  const [articles, setarticles] = useState();
+  const [blogs, setblogs] = useState();
   const[loading,setloading] =useState(false);
   const getData = async () => {
     props.setProgress(20)
     setloading(true)
-    let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
+    let url = `https://divyanshu-950.github.io/RecipeAPI/HealthyLifestyle/lifestyle.json`;
     props.setProgress(40)
     let data = await fetch(url);
     let parseddata = await data.json();
     props.setProgress(60)
-    setlength(parseddata.articles.length)
-    setarticles(parseddata.articles.slice(0,page));
+    setlength(parseddata.blogs.length)
+    setblogs(parseddata.blogs.slice(0,page));
 
     props.setProgress(80)
     setloading(false);
@@ -28,10 +28,10 @@ function News(props) {
   }, []);
 const handleclick=async()=>{
   setloading(true)
-  let url = `https://divyanshu-950.github.io/RecipeAPI/News.json`;
+  let url = `https://divyanshu-950.github.io/RecipeAPI/HealthyLifestyle/lifestyle.json`;
   let data = await fetch(url);
   let parseddata = await data.json();
-  setarticles(articles.concat(parseddata.articles.slice(page,(page+12))));
+  setblogs(blogs.concat(parseddata.blogs.slice(page,(page+12))));
   setpage(page+12);
   setloading(false);
 }
@@ -57,22 +57,22 @@ const handleclick=async()=>{
             }}
           >
             {" "}
-            NEWS
+            Healthy LifeStyle
           </p>
         
         </Link>
-      <hr className="mt-0" />
+     
 
         <div className="row">
        
-          {articles && 
-            articles.map((e,i) => {
+          {blogs && 
+            blogs.map((e,i) => {
               return (
                   <>
                  
                 <div className="col-6 col-md-4 col-sm-4 my-2"  key={e.url}>
                 <Fade delay={(i%12)*60} triggerOnce direction="right">
-                  <Link className='alink' to={e.url} target="_blank" rel="noreferrer">
+                  <Link className='alink' to= {`/collection/${e.url}`} rel="noreferrer">
                   <div
                     className="card mb-3 mx-2 my-2"
                     style={{ backgroundColor: "inherit", border: "none" }}
@@ -81,7 +81,7 @@ const handleclick=async()=>{
                       <div className="col-md-4">
                         <img
                           style={{ aspectRatio: 2 / 1 }}
-                          src={e.urlToImage}
+                          src={e.image}
                           className="img-fluid rounded-start"
                           alt="img"
                         />
@@ -98,7 +98,7 @@ const handleclick=async()=>{
                             >
                               {" "}
                               <strong>
-                                {e.title.length > 60
+                                {e.title.length > 50
                                   ? e.title.slice(0, 50) + "..."
                                   : e.title}
                               </strong>
@@ -106,7 +106,7 @@ const handleclick=async()=>{
                           
                           <p className="card-text">
                             <small className="text-body-secondary">
-                              by {e.author}
+                              by EatWell
                             </small>
                           </p>
                         </div>
@@ -129,4 +129,4 @@ const handleclick=async()=>{
   );
 }
 
-export default News;
+export default Lifestyle;

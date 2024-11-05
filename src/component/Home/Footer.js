@@ -60,7 +60,7 @@ function Footer() {
 
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-            <h6 className="text-uppercase fw-bold">Healthy Recipes</h6>
+            <h6 className="text-uppercase fw-bold">Recipes</h6>
             <hr
                 className="mb-4 mt-0 d-inline-block mx-auto"
                 style={{width: '60px', backgroundColor:' #7c4dff', height: '2px'}}

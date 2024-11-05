@@ -15,6 +15,7 @@ import LoadingBar from 'react-top-loading-bar'
 import { useState } from 'react';
 import About from './component/About';
 import Header from './component/Header';
+import Lifestyle from './component/HealthyLifestyle/Lifestyle';
 function App() {
   const[progress,setProgress] =useState(0);
   return (
@@ -31,9 +32,10 @@ function App() {
       <Route exact path='/breakfastbrunch' element={<QuickEasy setProgress = {setProgress}  key={"breakfastbrunch"} url={'breakfastbrunch'} title={"Breakfast & Brunches"}  />}/>
       <Route exact path='/smoothies' element={<QuickEasy setProgress = {setProgress}  key={"smoothie"} url={'smoothies'} title={"Smoothies"}  />}/>
       <Route exact path='/lunch' element={<QuickEasy setProgress = {setProgress}  key={"lunch"} url={'lunch'} title={"Lunch"}  />}/>
-      <Route exact path='/collection' element={<Collection setProgress = {setProgress} />}/>
+      <Route exact path='/collection/:page' element={<Collection setProgress = {setProgress} />}/>
       <Route exact path='/blog' element={<Blog setProgress = {setProgress} />}/>
       <Route exact path='/news' element={<News setProgress = {setProgress} />}/>
+      <Route exact path='/healthylifestyle' element={<Lifestyle setProgress = {setProgress} />}/>
       <Route exact path='/about' element={<About setProgress = {setProgress} />}/>
       <Route exact path='/header' element={<Header setProgress = {setProgress} />}/>
     </Routes>

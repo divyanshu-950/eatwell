@@ -13,7 +13,7 @@ function Home(props) {
       <MostLiked/>
       {props.setProgress(60)}
    
-      <HealthNews cardbreak={6} cardspilit={6}/>
+      <HealthNews cardbreak={6} cardspilit={6} mt={5}/>
     
 
    
