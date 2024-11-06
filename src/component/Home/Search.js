@@ -1,52 +1,63 @@
 import React, { useState, useEffect } from "react";
 import cook from "../img/cooking.png";
 import { Fade } from "react-awesome-reveal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import Spinner from "../Spinner";
+function Search(props) {
+    const[loading,setloading] =useState(false);
+    const [recipes, setRecipes] = useState([]);
+    const navigate = useNavigate();
+    let location = useLocation();
+    let data = location.state;
 
+    //Fetch
 
-function QuickEasy(props) {
-  const [page,setpage] = useState(8);
-  const[length,setlength] =useState(0)
-  const[loading,setloading] =useState(false);
-  const [recipes, setRecipes] = useState();
-  const navigate = useNavigate();
-  const getData = async () => {
-    props.setProgress(10);
-  
-    setloading(true)
-    let url = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/${props.url}.json`;
-    props.setProgress(40);
-    let data = await fetch(url);
-    let parseddata = await data.json();
-    props.setProgress(60);
-    setlength(parseddata.recipes.length)
-    setRecipes(parseddata.recipes.slice(0,page));
-    props.setProgress(100);
-    setloading(false);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-  
-const handleclick1=async()=>{
-  setloading(true)
-  let url = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/${props.url}.json`;
-  let data = await fetch(url);
-  let parseddata = await data.json();
-  setRecipes(recipes.concat(parseddata.recipes.slice(page,(page+12))));
-  setpage(page+12);
-  setloading(false);
-}
-
-  const handleclick = (recipe) => {
-    navigate("/blog", { state: recipe });
-  };
-  return (
     
+    
+    const getData = async () => {
+      props.setProgress(20);
+      setloading(true)
+                let url1 = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/smoothies.json`;
+                let url2 = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/breakfastbrunch.json`;
+                props.setProgress(30);
+                let url3 = `https://divyanshu-950.github.io/RecipeAPI/healthyrecipe/lunch.json`;
+                let data1 = await fetch(url1);
+                let data2 = await fetch(url2);
+                let data3 = await fetch(url3);
+                props.setProgress(50);
+                let parseddata = await data3.json();
+                let parseddata1 = await data1.json();
+                let parseddata2 = await data2.json();
+                const recipedata =parseddata.recipes.concat(parseddata1.recipes);
+                const recipedata1 = recipedata.concat(parseddata2.recipes);
+                const filterData = []
+                props.setProgress(60);
+                for(let i = 0; i < recipedata1.length; i++){
+                  if(recipedata1[i].keywords.includes(data)){
+                    filterData.push(recipedata1[i])
+                  
+                  }
+
+                }
+                props.setProgress(80);
+              setRecipes(filterData)
+              props.setProgress(100);
+              setloading(false)
+               
+      };
+      
+      useEffect(() => {
+            getData()
+            console.log(recipes)
+        
+      }, []);
+      const handleclick = (recipe) => {
+        navigate("/blog", { state: recipe });
+      };
+      
+  return (
     <div>
-      <div className="container-md mt-5">
+    <div className="container-md mt-5">
         <p style={{ textAlign: "center" }}>
           <span
             className="ml-2 heading fn-4"
@@ -59,17 +70,17 @@ const handleclick1=async()=>{
             {props.title}
           </span>
         </p>
-        <p className="mx-1 fn-2  text-center t-content ">
-          This collection of {props.title} is designed to fit into your busy
-          schedule while delivering the taste and nourishment you crave.{" "}
+        <p className="mx-1 fn-4  fs-2 text-center t-content ">
+          {<strong>{`You Searched For ${data}`}</strong>}
         </p>
         <hr className="mx-2" />
         <div className="row">
+          {loading && <Spinner/>}
           {recipes &&
             recipes.map((e, i) => {
               return (
-                <div className="col-6 col-md-3 col-sm-4" key={e.image}>
-                  <Fade delay={i * 100} triggerOnce direction="right">
+                <div className="col-6 col-md-3 col-sm-4" key={i}>
+                  <Fade duration={100*(i+5)} triggerOnce direction="right">
                     <div className="card mb-3" style={{ border: "none" }}>
                       <img
                         src={e.image}
@@ -159,12 +170,11 @@ const handleclick1=async()=>{
                 </div>
               );
             })}
-            {loading&&<Spinner/>}
-            <div className="d-flex justify-content-center my-4"> <button  style={page > length?{display:'none'}:{}}className="btn  btn-primary fn-2" onClick={handleclick1}> <strong>Load More <i class="fa-solid fa-chevron-down"></i></strong></button></div>
-        </div>
+            {recipes.length == 0 && <p className="fs-2 text-center fn-3"> Sorry! We're Workin on it....</p>}
+            </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default QuickEasy;
+export default Search

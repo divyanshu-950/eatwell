@@ -16,6 +16,7 @@ import { useState } from 'react';
 import About from './component/About';
 import Header from './component/Header';
 import Lifestyle from './component/HealthyLifestyle/Lifestyle';
+import Search from './component/Home/Search';
 function App() {
   const[progress,setProgress] =useState(0);
   return (
@@ -34,10 +35,11 @@ function App() {
       <Route exact path='/lunch' element={<QuickEasy setProgress = {setProgress}  key={"lunch"} url={'lunch'} title={"Lunch"}  />}/>
       <Route exact path='/collection/:page' element={<Collection setProgress = {setProgress} />}/>
       <Route exact path='/blog' element={<Blog setProgress = {setProgress} />}/>
+      <Route exact path='/search' element={<Search setProgress = {setProgress} key={"search"} />}/>
       <Route exact path='/news' element={<News setProgress = {setProgress} />}/>
       <Route exact path='/healthylifestyle' element={<Lifestyle setProgress = {setProgress} />}/>
       <Route exact path='/about' element={<About setProgress = {setProgress} />}/>
-      <Route exact path='/header' element={<Header setProgress = {setProgress} />}/>
+      
     </Routes>
    </div>
     <Footer/>

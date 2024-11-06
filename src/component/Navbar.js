@@ -1,9 +1,11 @@
-import React, {useState,useEffect } from "react";
+import React, {useState,useEffect, useRef } from "react";
 import logo from './img/homelogo.svg'
-import { Link ,useLocation} from "react-router-dom";
+import { Link ,useLocation,useNavigate} from "react-router-dom";
+
 
 export default function Navbar() {
- 
+  const searchdata = useRef();
+  const[text,setText] = useState()
   const[background,setBackground] = useState(false)
    const device = window.matchMedia("(max-width: 990px)").matches;
   const changeBackground = () =>{
@@ -13,6 +15,7 @@ export default function Navbar() {
     setBackground(false)
 
   }
+  const navigate = useNavigate();
   window.addEventListener('scroll',changeBackground)
   let location = useLocation();
   useEffect(()=>{
@@ -24,7 +27,17 @@ export default function Navbar() {
  },400)
   },[location])
 
-
+  const change = (event)=>{
+    setText(event.target.value);
+    
+}
+const submit = (event)=>{
+  const search = searchdata.current.value
+  const search1 = search.toLowerCase()
+  setText("")
+  navigate(`/search/`, { state: search1 });
+  event.preventDefault();
+}
 
   return (
     <div >
@@ -111,7 +124,10 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
-           
+            <form className="d-flex" role="search" onSubmit={submit}>
+        <input className="form-control me-2" ref={searchdata} type="search" placeholder="Search" value={text} onChange={change}aria-label="Search"/>
+        <button className="btn btn-outline-success" type="submit" >Search</button>
+      </form>
           </div>
         </div>
       </nav>
