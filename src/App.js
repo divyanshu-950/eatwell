@@ -20,7 +20,7 @@ import Search from './component/Home/Search';
 function App() {
   const[progress,setProgress] =useState(0);
   return (
-    <Router basename='/'>
+    <Router basename='/eatwell'>
     <Navbar/>
     <LoadingBar
      color='#f11946'
