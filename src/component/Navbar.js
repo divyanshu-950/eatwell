@@ -47,7 +47,7 @@ const submit = (event)=>{
         style={background?{backgroundColor:'whitesmoke'}:{backgroundColor:"inherit"}}
       >
         <div className="container-fluid ">
-          <Link className="navbar-brand " to="/">
+          <Link className="navbar-brand " to="/eatwell">
           <b>
             EAT
             <img
@@ -87,39 +87,39 @@ const submit = (event)=>{
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/quick_easy"?"active":""}`} to="/quick_easy">
+                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/quick_easy"?"active":""}`} to="/eatwell/quick_easy">
                       Quick & Easy
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/breakfastbrunch"?"active":""}`} to="/breakfastbrunch">
+                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/breakfastbrunch"?"active":""}`} to="/eatwell/breakfastbrunch">
                       Breakfast & Brunch
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/lunch"?"active":""}`}to="/lunch">
+                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/lunch"?"active":""}`}to="/eatwell/lunch">
                       Lunch
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/smoothies"?"active":""}`} to="/smoothies">
+                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/smoothies"?"active":""}`} to="/eatwell/smoothies">
                       Smoothies
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/healthylifestyle"?"active":""}`} aria-current="page" to="/healthylifestyle">
+                <Link className={`nav-link  ${location.pathname==="/eatwell/healthylifestyle"?"active":""}`} aria-current="page" to="/eatwell/healthylifestyle">
                   <span className="healthtips">Healthy Lifestyle</span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/news"?"active":""}`} aria-current="page" to="/news">
+                <Link className={`nav-link  ${location.pathname==="/eatwell/news"?"active":""}`} aria-current="page" to="/eatwell/news">
                   <span className="healthtips">News </span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/about"?"active":""}`} aria-current="page" to="/about">
+                <Link className={`nav-link  ${location.pathname==="/eatwell/about"?"active":""}`} aria-current="page" to="/eatwell/about">
                   <span className="healthtips">About us</span>
                 </Link>
               </li>
