@@ -170,7 +170,7 @@ function Search(props) {
                 </div>
               );
             })}
-            {recipes.length == 0 && <p className="fs-2 text-center fn-3"> Sorry! We're Workin on it....</p>}
+            {!loading && recipes.length == 0 && <p className="fs-2 text-center fn-3"> Sorry! We're Workin on it....</p>}
             </div>
       </div>
     </div>
