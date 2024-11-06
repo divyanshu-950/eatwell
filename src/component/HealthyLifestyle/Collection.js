@@ -57,8 +57,8 @@ function Collection(props) {
                 style={{ height: "100%", width: "100%", aspectRatio: "3/2" }}
               />
               <p
-                className="fn-3 my-4"
-                style={{ textAlign: "justify", lineHeight: "25px" }}
+                className=" my-4 blog-text"
+                style={{ textAlign: "justify", lineHeight: "30px" }}
               >
                 {description}
               </p>
@@ -75,7 +75,7 @@ function Collection(props) {
                           {index + 1}. {element.name}{" "}
                         </p>
                       </strong>
-                      <hr className="mt-0" />
+                      <hr className="mt-0 mb-4" />
                       {element.image && <img
                         src={element.image}
                         style={{
@@ -86,8 +86,8 @@ function Collection(props) {
                         alt="img"
                       />}
                       <p
-                        className="mt-3 mb-3"
-                        style={{ textAlign: "justify", lineHeight: "25px" }}
+                        className="mt-3 mb-3 blog-text"
+                        style={{ textAlign: "justify", lineHeight: "30px" }}
                       >
                         {element.description}
                       </p>

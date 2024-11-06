@@ -12,7 +12,7 @@ function Blog(props) {
       { props.setProgress(20)}
       <div className="row" style={{ padding: "10px 1vw" }}>
         <div className="col-12 col-md-8">
-          <p className="text-center my-4 mb-5">
+          <p className="text-center my-4 mb-4">
           <Fade triggerOnce direction="up" duration={1000}>
           <span
               className="fs-2 "
@@ -24,7 +24,7 @@ function Blog(props) {
           </Fade>
           </p>
 
-          <p className="my-3">
+          <p className="my-2">
             {" "}
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
@@ -51,7 +51,7 @@ function Blog(props) {
                 {" "}
                 {data.rate}/5
               </strong>{" "}
-              by Divyanshu kapoor
+              by Eatwell
             </small>
           </p>
           <p className=" blog-text">
