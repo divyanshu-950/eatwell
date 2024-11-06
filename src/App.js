@@ -28,17 +28,17 @@ function App() {
    />
    <div className="container-fluid p-0">
    <Routes>
-      <Route exact path='/eatwell' element={< Home setProgress = {setProgress}/>}/>
-      <Route exact path='/eatwell/quick_easy' element={<QuickEasy setProgress = {setProgress}  key={"quickeasy"} url={'quickeasy'} title={"QUICK & EASY RECIPES"}  />}/>
-      <Route exact path='/eatwell/breakfastbrunch' element={<QuickEasy setProgress = {setProgress}  key={"breakfastbrunch"} url={'breakfastbrunch'} title={"Breakfast & Brunches"}  />}/>
-      <Route exact path='/eatwell/smoothies' element={<QuickEasy setProgress = {setProgress}  key={"smoothie"} url={'smoothies'} title={"Smoothies"}  />}/>
-      <Route exact path='/eatwell/lunch' element={<QuickEasy setProgress = {setProgress}  key={"lunch"} url={'lunch'} title={"Lunch"}  />}/>
-      <Route exact path='/eatwell/collection/:page' element={<Collection setProgress = {setProgress} />}/>
-      <Route exact path='/eatwell/blog' element={<Blog setProgress = {setProgress} />}/>
-      <Route exact path='/eatwell/search' element={<Search setProgress = {setProgress} key={"search"} />}/>
-      <Route exact path='/eatwell/news' element={<News setProgress = {setProgress} />}/>
-      <Route exact path='/eatwell/healthylifestyle' element={<Lifestyle setProgress = {setProgress} />}/>
-      <Route exact path='/eatwell/about' element={<About setProgress = {setProgress} />}/>
+      <Route exact path='/' element={< Home setProgress = {setProgress}/>}/>
+      <Route exact path='/quick_easy' element={<QuickEasy setProgress = {setProgress}  key={"quickeasy"} url={'quickeasy'} title={"QUICK & EASY RECIPES"}  />}/>
+      <Route exact path='/breakfastbrunch' element={<QuickEasy setProgress = {setProgress}  key={"breakfastbrunch"} url={'breakfastbrunch'} title={"Breakfast & Brunches"}  />}/>
+      <Route exact path='/smoothies' element={<QuickEasy setProgress = {setProgress}  key={"smoothie"} url={'smoothies'} title={"Smoothies"}  />}/>
+      <Route exact path='/lunch' element={<QuickEasy setProgress = {setProgress}  key={"lunch"} url={'lunch'} title={"Lunch"}  />}/>
+      <Route exact path='/collection/:page' element={<Collection setProgress = {setProgress} />}/>
+      <Route exact path='/blog' element={<Blog setProgress = {setProgress} />}/>
+      <Route exact path='/search' element={<Search setProgress = {setProgress} key={"search"} />}/>
+      <Route exact path='/news' element={<News setProgress = {setProgress} />}/>
+      <Route exact path='/healthylifestyle' element={<Lifestyle setProgress = {setProgress} />}/>
+      <Route exact path='/about' element={<About setProgress = {setProgress} />}/>
       
     </Routes>
    </div>

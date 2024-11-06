@@ -35,7 +35,7 @@ const submit = (event)=>{
   const search = searchdata.current.value
   const search1 = search.toLowerCase()
   setText("")
-  navigate(`/search/`, { state: search1 });
+  navigate(`/search`, { state: search1 });
   event.preventDefault();
 }
 
@@ -47,7 +47,7 @@ const submit = (event)=>{
         style={background?{backgroundColor:'whitesmoke'}:{backgroundColor:"inherit"}}
       >
         <div className="container-fluid ">
-          <Link className="navbar-brand " to="/eatwell">
+          <Link className="navbar-brand " to="/">
           <b>
             EAT
             <img
@@ -87,39 +87,39 @@ const submit = (event)=>{
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/quick_easy"?"active":""}`} to="/eatwell/quick_easy">
+                    <Link className={`dropdown-item  ${location.pathname==="/quick_easy"?"active":""}`} to="/quick_easy">
                       Quick & Easy
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/breakfastbrunch"?"active":""}`} to="/eatwell/breakfastbrunch">
+                    <Link className={`dropdown-item  ${location.pathname==="/breakfastbrunch"?"active":""}`} to="/breakfastbrunch">
                       Breakfast & Brunch
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/lunch"?"active":""}`}to="/eatwell/lunch">
+                    <Link className={`dropdown-item  ${location.pathname==="/lunch"?"active":""}`}to="/lunch">
                       Lunch
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item  ${location.pathname==="/eatwell/smoothies"?"active":""}`} to="/eatwell/smoothies">
+                    <Link className={`dropdown-item  ${location.pathname==="/smoothies"?"active":""}`} to="/smoothies">
                       Smoothies
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/eatwell/healthylifestyle"?"active":""}`} aria-current="page" to="/eatwell/healthylifestyle">
+                <Link className={`nav-link  ${location.pathname==="/healthylifestyle"?"active":""}`} aria-current="page" to="/healthylifestyle">
                   <span className="healthtips">Healthy Lifestyle</span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/eatwell/news"?"active":""}`} aria-current="page" to="/eatwell/news">
+                <Link className={`nav-link  ${location.pathname==="/news"?"active":""}`} aria-current="page" to="/news">
                   <span className="healthtips">News </span>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  ${location.pathname==="/eatwell/about"?"active":""}`} aria-current="page" to="/eatwell/about">
+                <Link className={`nav-link  ${location.pathname==="/about"?"active":""}`} aria-current="page" to="/about">
                   <span className="healthtips">About us</span>
                 </Link>
               </li>
