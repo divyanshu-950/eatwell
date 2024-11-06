@@ -3,6 +3,7 @@ import cook from "../img/cooking.png";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate,useLocation } from "react-router-dom";
 import Spinner from "../Spinner";
+import working from "../img/working.gif"
 function Search(props) {
     const[loading,setloading] =useState(false);
     const [recipes, setRecipes] = useState([]);
@@ -170,7 +171,7 @@ function Search(props) {
                 </div>
               );
             })}
-            {!loading && recipes.length == 0 && <p className="fs-2 text-center fn-3"> Sorry! We're Workin on it....</p>}
+            {!loading && recipes.length == 0 && <p className="fs-2 fw-bolder text-center fn-3">  <img src={working} alt="loading" /> Sorry! We're Workin on it....</p>}
             </div>
       </div>
     </div>
