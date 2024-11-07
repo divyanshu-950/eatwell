@@ -1,5 +1,5 @@
 import React from "react";
-import img from "./img/H1.png";
+import img from "./img/h005.gif";
 import { Fade } from "react-awesome-reveal";
 function Header(props) {
   return (
@@ -26,8 +26,8 @@ function Header(props) {
                   className="container"
                   style={{
                     objectFit: "contain",
-                    height: "6rem",
-                    width: "8rem",
+                    height: "9rem",
+                    width: "11rem",
                   }}
                 >
                   <img
@@ -36,7 +36,7 @@ function Header(props) {
                     alt="img"
                   />
                 </div>
-                <p className="fn-4 fs-1 text-center fw-bolder">
+                <p className="fn-4 fs-1  text-center fw-bolder">
                   Welcome to EatWell
                 </p>
               </Fade>
