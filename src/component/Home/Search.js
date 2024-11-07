@@ -51,7 +51,7 @@ function Search(props) {
             getData()
             console.log(recipes)
         
-      }, []);
+      }, [data]);
       const handleclick = (recipe) => {
         navigate("/blog", { state: recipe });
       };

@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import cook from "./img/cooking.png";
 import HealthNews from "./Home/HealthNews";
 import { Fade } from "react-awesome-reveal";
+import Minilifestyle from "./HealthyLifestyle/Minilifestyle";
 function Blog(props) {
   let location = useLocation();
   let data = location.state;
@@ -128,7 +129,7 @@ function Blog(props) {
           })}
         </div>
         <div className="col-12 col-md-4 mt-5 pt-5 px-1">
-
+        <Minilifestyle cardbreak={6} cardspilit={12} mt={2}/>
         { props.setProgress(80)}
         <HealthNews cardbreak={6} cardspilit={12} mt={2}/>
         </div>

@@ -21,9 +21,9 @@ function HealthNews(props) {
       <div className="container-md">
        
            <p
-            className={`fs-2 mt-${props.mt} text-center`}
+            className={`fs-3 mt-${props.mt} text-center`}
             style={{
-              fontWeight: "700",
+              fontWeight: "500",
                fontFamily: '"Playfair Display", "serif"',
             }}
           >

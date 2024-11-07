@@ -1,44 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function sidestyle() {
+function Minilifestyle(props) {
     const navigate = useNavigate();
     const [articles, setarticles] = useState();
     const getData = async () => {
       let url = `https://divyanshu-950.github.io/RecipeAPI/HealthyLifestyle/lifestyle.json`;
       let data = await fetch(url);
       let parseddata = await data.json();
-      setarticles(parseddata.articles);
+      setarticles(parseddata.blogs.slice(0,4));
     };
     useEffect(() => {
       getData();
     }, []);
     const handleclick =()=>{
-      navigate('/news')
+      navigate('/healthylifestyle')
     }
   
     return (
       <div>
         <div className="container-md">
+        <p
+            className={`fs-3 mt-${props.mt} text-center`}
+            style={{
+              fontWeight: "500",
+               fontFamily: '"Playfair Display", "serif"',
+            }}
+          >
+            {" "}
+          <span>  Healthy Lifestyle </span>
          
-             <p
-              className={`fs-2 mt-${props.mt} text-center`}
-              style={{
-                fontWeight: "700",
-                 fontFamily: '"Playfair Display", "serif"',
-              }}
-            >
-              {" "}
-            <span>  NEWS </span>
-           
-            </p>     
-            <hr className="mb-5" />
+          </p>     
+          <hr className="mb-5" />
           <div className="row">
             {articles &&
               articles.map((e,i) => {
                 return (
                   <div className={`col-${props.cardbreak} col-md-${props.cardspilit}`}  key={i}>
-                    <Link className='alink' to={e.url} target="_blank" rel="noreferrer">
+                   <Link
+                        className="alink"
+                        to={`/collection/${e.url}`}
+                        rel="noreferrer"
+                      >
                     <div
                       className="card mb-3"
                       style={{ backgroundColor: "inherit", border: "none" }}
@@ -47,7 +50,7 @@ function sidestyle() {
                         <div className="col-md-4 mt-3">
                           <img
                             style={{ aspectRatio: 2 / 1 }}
-                            src={e.urlToImage}
+                            src={e.image}
                             className="img-fluid rounded-start"
                             alt="img"
                           />
@@ -64,7 +67,7 @@ function sidestyle() {
                               >
                                 {" "}
                                 <strong>
-                                  {e.title.length > 60
+                                  {e.title.length > 50
                                     ? e.title.slice(0, 50) + "..."
                                     : e.title}
                                 </strong>
@@ -72,7 +75,7 @@ function sidestyle() {
                             
                             <p className="card-text">
                               <small className="text-body-secondary">
-                                by {e.author}
+                                by Eatwell
                               </small>
                             </p>
                           </div>
@@ -91,4 +94,4 @@ function sidestyle() {
   )
 }
 
-export default sidestyle
+export default Minilifestyle
